@@ -1,0 +1,15 @@
+# fly.toml
+
+app = "kanban-board"
+
+[[services]]
+  internal_port = 80
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 1
+    soft_limit = 1
+
+  [[services.ports]]
+    handlers = ["https"]
+
